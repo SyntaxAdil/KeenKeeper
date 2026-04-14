@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
 
-const HomePage = () => {
-  return (
-    <div>HomePage</div>
-  )
-}
+const HomePage = async () => {
+  const friends = await (
+    await fetch(process.env.NEXT_PUBLIC_BASE_URL + "/friendData.json")
+  ).json();
 
-export default HomePage
+  return <main>
+
+    Hero Secton
+  </main>;
+};
+
+export default HomePage;

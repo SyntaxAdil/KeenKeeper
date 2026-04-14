@@ -19,7 +19,7 @@ const Navbar = () => {
       onClick={toggleMenu}
       key={i.id}
       href={i.to}
-      className={`flex items-center gap-2  px-4 py-2 rounded-md  text-base  font-medium ${pathname === i.to ? "bg-[#244d3f] text-white" : "bg-transparent text-[#64748b]"} hover:bg-[#244d3f] hover:text-white transition-colors duration-150`}
+      className={`justify-center flex items-center gap-2  px-4 py-2 rounded-md  text-base  font-medium ${pathname === i.to ? "bg-[#244d3f] text-white" : "bg-transparent text-[#64748b]"} hover:bg-[#244d3f] hover:text-white transition-colors duration-150`}
     >
       <i.icon size={18}></i.icon>
       {i.name}
@@ -44,7 +44,7 @@ const Navbar = () => {
       >
         <div
           onClick={(e) => e.stopPropagation()}
-          className={`w-md absolute z-50 min-h-screen  bg-white right-0 border-l  border-base-300 p-4 transform  ${showMenu ? "translate-x-0" : "translate-x-full"} transition-all duration-200   ease-in-out `}
+          className={`w-full md:w-md absolute z-50 min-h-screen  bg-white right-0 border-l  border-base-300 p-4 transform  ${showMenu ? "translate-x-0" : "translate-x-full"} transition-all duration-200   ease-in-out `}
         >
           <div className="flex justify-between items-center px-4">
             <h1 className="text-[#1f2937] font-bold text-2xl">
