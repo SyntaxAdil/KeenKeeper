@@ -29,9 +29,9 @@ const Navbar = () => {
   return (
     <>
       <nav className="flex items-center justify-between h-15 px-4 md:px-8 bg-white border-b border-base-300 fixed top-0 left-0 right-0 z-50">
-        <h1 className="text-[#1f2937] font-bold text-2xl">
+        <Link href={"/"} className="text-[#1f2937] font-bold text-2xl">
           Keen<span className="text-[#244d3f]">Keeper</span>
-        </h1>
+        </Link>
         <ul className=" hidden md:flex items-center gap-4">{NAV_LINKS}</ul>
         <button className="btn md:hidden " onClick={toggleMenu}>
           <Menu />
@@ -47,9 +47,9 @@ const Navbar = () => {
           className={`w-full md:w-md absolute z-50 min-h-screen  bg-white right-0 border-l  border-base-300 p-4 transform  ${showMenu ? "translate-x-0" : "translate-x-full"} transition-all duration-200   ease-in-out `}
         >
           <div className="flex justify-between items-center px-4">
-            <h1 className="text-[#1f2937] font-bold text-2xl">
+            <Link href={"/"} className="text-[#1f2937] font-bold text-2xl">
               Keen<span className="text-[#244d3f]">Keeper</span>
-            </h1>
+            </Link>
             <button onClick={toggleMenu} className="btn">
               <X />
             </button>

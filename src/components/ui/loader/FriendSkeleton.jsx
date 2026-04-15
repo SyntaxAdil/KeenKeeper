@@ -20,13 +20,14 @@ const FriendsCardSkeleton = () => {
 
 const SkeletonGrid = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <>
       <h1 className="text-2xl font-semibold mb-4">Your Friends</h1>
-
-      {Array.from({ length: 12 }).map((_, i) => (
-        <FriendsCardSkeleton key={i} />
-      ))}
-    </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {Array.from({ length: 12 }).map((_, i) => (
+          <FriendsCardSkeleton key={i} />
+        ))}
+      </div>
+    </>
   );
 };
 

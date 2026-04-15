@@ -1,14 +1,7 @@
+import FriendDetailesAction from "./../../../components/ui/FriendDetailesAction";
 import React from "react";
 import FriendCard from "../../../components/ui/friendDetailes/FriendCard";
-import {
-  Archive,
-  Bell,
-  MessageCircle,
-  MessageSquare,
-  Phone,
-  Trash,
-  Video,
-} from "lucide-react";
+import { Archive, Trash, Bell } from "lucide-react";
 // Dynamic meta data
 export async function generateMetadata({ params }) {
   const friends = await (
@@ -54,6 +47,7 @@ const FriendDetailes = async ({ params }) => {
       subtitle: "Next Due",
     },
   ];
+
   return (
     <section className="py-10 bg-[#F8FAFC] w-full min-h-screen px-4">
       <div className="container max-w-278 mx-auto flex justify-between  gap-6 flex-col md:flex-row ">
@@ -106,25 +100,7 @@ const FriendDetailes = async ({ params }) => {
             <button className="btn">Edit</button>
           </div>
           {/* Actions */}
-          <div className=" p-4 bg-white shadow border border-white rounded-md  text-left  ">
-            <h1 className="text-xl font-medium text-[#244D3F] mb-4">
-              Quick Check-In
-            </h1>
-            <div className="grid grid-cols-3 gap-4 ">
-              <button className="text-lg text-[#1F2937] font-medium btn h-23 flex-col hover:border-emerald-200 group bg-[#f8fafc]">
-                <Phone className="group-hover:text-emerald-600 transition-colors duration-150" />
-                Call
-              </button>
-              <button className="text-lg text-[#1F2937] font-medium btn h-23 flex-col hover:border-indigo-200 group bg-[#f8fafc]">
-                <MessageSquare className="group-hover:text-indigo-600 transition-colors duration-150" />
-                Text
-              </button>
-              <button className="text-lg text-[#1F2937] font-medium btn h-23 flex-col  hover:border-cyan-200 group bg-[#f8fafc]">
-                <Video className="group-hover:text-cyan-600 transition-colors duration-150" />
-                Video
-              </button>
-            </div>
-          </div>
+          <FriendDetailesAction name={oneFriend.name} />
         </div>
       </div>
     </section>
