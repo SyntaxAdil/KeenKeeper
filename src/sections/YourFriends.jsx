@@ -3,7 +3,7 @@ import FriendsCard from "../components/ui/FriendsCard";
 
 const YourFriends = async () => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"}/friendData.json`,
+    `${"https://keen-keeper-adil.vercel.app" ||  "http://localhost:3000"}/friendData.json`,
     { cache: "no-store" },
   );
 
