@@ -1,5 +1,6 @@
 "use client";
 import { createContext, useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 export const TimelineContextApi = createContext(null);
 
@@ -8,6 +9,11 @@ const TimelineContext = ({ children }) => {
   const [filterType, setFilterType] = useState("");
   const [sortType, setSortType] = useState("");
   const [query, setQuery] = useState("");
+  const messages = {
+    call: "Call logged successfully",
+    message: "Message sent successfully",
+    video: "Video session added",
+  };
   const addToTimeline = (media, name) => {
     const newEntry = {
       id: crypto.randomUUID(),
@@ -29,6 +35,7 @@ const TimelineContext = ({ children }) => {
       }),
     };
     setAllTimeline((p) => [...p, newEntry]);
+    toast.success(`${messages[media]} ${media==="message"?"to":"with"} ${name}`);
   };
 
   // filteredLogic
@@ -45,11 +52,9 @@ const TimelineContext = ({ children }) => {
       })
     : filteredTimeline;
 
-  
-    const qureryTimeline = allTimeline.filter((i) => i.name.toLowerCase().includes(query.toLowerCase()));
-    
-    
-  
+  const qureryTimeline = sortedTimeline.filter((i) =>
+    i.name.toLowerCase().includes(query.toLowerCase()),
+  );
 
   const value = {
     addToTimeline,
@@ -57,7 +62,7 @@ const TimelineContext = ({ children }) => {
     setFilterType,
     setSortType,
     setQuery,
-    
+    setAllTimeline
   };
   return (
     <TimelineContextApi.Provider value={value}>

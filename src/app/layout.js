@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "./../components/Navbar/Navbar";
 import Footer from "./../components/Footer/Footer";
 import TimelineContextProvider from "@/context/TimelineContext";
+import { Toaster } from "react-hot-toast";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
 
           <Footer />
         </TimelineContextProvider>
+        <Toaster position="top-center" reverseOrder={false} />
       </body>
     </html>
   );
