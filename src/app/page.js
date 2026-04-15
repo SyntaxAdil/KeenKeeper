@@ -6,7 +6,7 @@ import SkeletonGrid from "../components/ui/loader/FriendSkeleton";
 
 
 const HomePage = async () => {
-  const friends = await (await fetch(    process.env.NEXT_PUBLIC_BASE_URL + "/friendData.json")).json()
+  const friends = await (await fetch("/friendData.json")).json()
   return(
     <main className="mx-auto max-w-278">
       <Hero />

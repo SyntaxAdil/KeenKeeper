@@ -3,7 +3,7 @@ import FriendsCard from "../components/ui/FriendsCard";
 
 const YourFriends = async () => {
   const friends = await (
-    await fetch(process.env.NEXT_PUBLIC_BASE_URL + "/friendData.json")
+    await fetch("/friendData.json")
   ).json();
 
   return (
