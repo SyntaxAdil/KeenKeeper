@@ -3,7 +3,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="py-15 md:py-10 md:text-center px-4">
+    <section className="pt-15 pb-8 md:py-10 md:text-center px-4">
       <h1 className= "text-4xl  md:text-5xl font-bold mb-4" >Friends to keep close in your life</h1>
 
       <p className="text-[#64748b] mb-8 " >

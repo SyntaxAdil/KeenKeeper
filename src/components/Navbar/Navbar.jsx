@@ -16,7 +16,7 @@ const Navbar = () => {
     { id: 3, name: "Stats", icon: ChartLine, to: "/stats" },
   ].map((i) => (
     <Link
-      onClick={toggleMenu}
+      onClick={()=>setShowMenu(false)}
       key={i.id}
       href={i.to}
       className={`justify-center flex items-center gap-2  px-4 py-2 rounded-md  text-base  font-medium ${pathname === i.to ? "bg-[#244d3f] text-white" : "bg-transparent text-[#64748b]"} hover:bg-[#244d3f] hover:text-white transition-colors duration-150`}
@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="flex items-center justify-between h-15 px-4 md:px-8 bg-white border-b border-base-300 fixed top-0 left-0 right-0">
+      <nav className="flex items-center justify-between h-15 px-4 md:px-8 bg-white border-b border-base-300 fixed top-0 left-0 right-0 z-50">
         <h1 className="text-[#1f2937] font-bold text-2xl">
           Keen<span className="text-[#244d3f]">Keeper</span>
         </h1>

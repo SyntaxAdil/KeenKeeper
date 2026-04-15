@@ -1,16 +1,17 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Hero from "./../sections/Hero";
-import Stats from "./../sections/Stats";
+import HeroStats from "../sections/HeroStats";
+import YourFriends from "./../sections/YourFriends";
 
 const HomePage = async () => {
-  const friends = await (
-    await fetch(process.env.NEXT_PUBLIC_BASE_URL + "/friendData.json")
-  ).json();
-
-  return (
+  const friends = await (await fetch(    process.env.NEXT_PUBLIC_BASE_URL + "/friendData.json")).json()
+  return(
     <main className="mx-auto max-w-278">
       <Hero />
-      <Stats data={friends} />
+      <HeroStats data={friends} />
+      <Suspense fallback={<span className="loading"></span>}>
+        <YourFriends />
+      </Suspense>
     </main>
   );
 };

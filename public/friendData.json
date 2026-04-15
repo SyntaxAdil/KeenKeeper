@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "David Kim",
-    "picture": "friendsImage/friend_1.png",
+    "picture": "/friendsImage/friend_pic_1.png",
     "email": "david.kim@gmail.com",
     "days_since_contact": 62,
     "status": "Almost Due",
@@ -14,7 +14,7 @@
   {
     "id": 2,
     "name": "Emma Wilson",
-    "picture": "friendsImage/friend_2.png",
+    "picture": "/friendsImage/friend_pic_2.png",
     "email": "emma.wilson@gmail.com",
     "days_since_contact": 62,
     "status": "Overdue",
@@ -26,7 +26,7 @@
   {
     "id": 3,
     "name": "Lisa Nakamura",
-    "picture": "friendsImage/friend_3.png",
+    "picture": "/friendsImage/friend_pic_3.png",
     "email": "lisa.nakamura@gmail.com",
     "days_since_contact": 62,
     "status": "Overdue",
@@ -38,7 +38,7 @@
   {
     "id": 4,
     "name": "James Wright",
-    "picture": "friendsImage/friend_4.png",
+    "picture": "/friendsImage/friend_pic_4.png",
     "email": "james.wright@gmail.com",
     "days_since_contact": 62,
     "status": "Overdue",
@@ -50,7 +50,7 @@
   {
     "id": 5,
     "name": "Aisha Rahman",
-    "picture": "friendsImage/friend_5.png",
+    "picture": "/friendsImage/friend_pic_5.png",
     "email": "aisha.rahman@gmail.com",
     "days_since_contact": 15,
     "status": "Almost Due",
@@ -62,7 +62,7 @@
   {
     "id": 6,
     "name": "Samiul Hasan",
-    "picture": "friendsImage/friend_6.png",
+    "picture": "/friendsImage/friend_pic_6.png",
     "email": "samiul.hasan@gmail.com",
     "days_since_contact": 5,
     "status": "On-Track",
@@ -74,7 +74,7 @@
   {
     "id": 7,
     "name": "Nusrat Jahan",
-    "picture": "friendsImage/friend_7.png",
+    "picture": "/friendsImage/friend_pic_7.png",
     "email": "nusrat.jahan@gmail.com",
     "days_since_contact": 28,
     "status": "Overdue",
@@ -86,7 +86,7 @@
   {
     "id": 8,
     "name": "Tanvir Ahmed",
-    "picture": "friendsImage/friend_8.png",
+    "picture": "/friendsImage/friend_pic_8.png",
     "email": "tanvir.ahmed@gmail.com",
     "days_since_contact": 9,
     "status": "On-Track",
@@ -98,7 +98,7 @@
   {
     "id": 9,
     "name": "Maya Chowdhury",
-    "picture": "friendsImage/friend_9.png",
+    "picture": "/friendsImage/friend_pic_9.png",
     "email": "maya.chowdhury@gmail.com",
     "days_since_contact": 20,
     "status": "Almost Due",
@@ -110,7 +110,7 @@
   {
     "id": 10,
     "name": "Rafiul Islam",
-    "picture": "friendsImage/friend_10.png",
+    "picture": "/friendsImage/friend_pic_10.png",
     "email": "rafiul.islam@gmail.com",
     "days_since_contact": 3,
     "status": "On-Track",
@@ -122,7 +122,7 @@
   {
     "id": 11,
     "name": "Sadia Ahmed",
-    "picture": "friendsImage/friend_11.png",
+    "picture": "/friendsImage/friend_pic_11.png",
     "email": "sadia.ahmed@gmail.com",
     "days_since_contact": 45,
     "status": "Overdue",
@@ -134,7 +134,7 @@
   {
     "id": 12,
     "name": "Omar Faruk",
-    "picture": "friendsImage/friend_12.png",
+    "picture": "/friendsImage/friend_pic_12.png",
     "email": "omar.faruk@gmail.com",
     "days_since_contact": 12,
     "status": "On-Track",

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { use } from "react";
 
 const Stats = ({data}) => {
+    
 
   const STATS = [
     { id: 1, title: data.length, subtitle: "Total Friends" },
@@ -10,8 +11,8 @@ const Stats = ({data}) => {
   ];
 
   return (
-    <section className="pb-10 border-b border-[#E9E9E9] mb-10">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <section className="pb-10 border-b border-[#E9E9E9] mb-10 px-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
         {STATS.map((stat) => (
           <div
             key={stat.id}
