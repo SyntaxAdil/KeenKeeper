@@ -1,23 +1,20 @@
-
-import Timeline from './../../components/ui/timeline/Timeline';
+import Timeline from "./../../components/ui/timeline/Timeline";
+import FilterTimeline from "./../../components/ui/timeline/FilterTimeline";
+import SortTimeLine from "../../components/ui/timeline/SortTimeLine";
+import SerachTimeline from './../../components/ui/timeline/SerachTimeline';
 
 const TimeLinePage = () => {
   return (
-    <section className="my-10 max-w-278 mx-auto  ">
+    <section className="my-10 max-w-278 mx-auto px-4 ">
       <div>
         <h1 className="text-5xl font-bold mb-4">Timeline </h1>
 
         {/* select filter */}
-        <fieldset className="fieldset">
-          <select defaultValue="Filter timeline" className="select outline-0">
-            <option  disabled={true}>Filter timeline</option>
-            <option>Call</option>
-            <option>Text</option>
-            <option>Video</option>
-          </select>
-        </fieldset>
-     
-     <Timeline/>
+        <FilterTimeline />
+        <SortTimeLine/>
+        <SerachTimeline/>
+        {/* Timeline */}
+        <Timeline />
       </div>
     </section>
   );

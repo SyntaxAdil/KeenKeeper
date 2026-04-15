@@ -14,8 +14,7 @@ const TimeLineCard = ({ data }) => {
       ></Image>
       <div>
         <h1 className="text-xl text-[#64748B] mb-1">
-          <strong className="text-[#244D3F]">{data.media}</strong>
-          with {data.name}
+          <strong className="text-[#244D3F]">{data.media}</strong> with {data.name}
         </h1>
 
         <p className="text-[#64748B] font-medium">{data.date}</p>
