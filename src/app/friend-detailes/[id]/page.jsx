@@ -53,7 +53,7 @@ const FriendDetailes = async ({ params }) => {
     <section className="py-10 bg-[#F8FAFC] w-full min-h-screen px-4">
       <div className="container max-w-278 mx-auto flex justify-between  gap-6 flex-col md:flex-row ">
         {/* left */}
-        <div className="w-88">
+        <div className="w-88 mx-auto">
           <FriendCard friend={oneFriend} />
           <div className="flex flex-col gap-4 my-4">
             <button className="  bg-white py-3 border rounded-md border-gray-200 text-[#1F2937] cursor-pointer font-medium  flex items-center gap-2 justify-center  transition-all duration-150 hover:border-[#1F2937]">
