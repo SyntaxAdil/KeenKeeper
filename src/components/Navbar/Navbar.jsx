@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="flex items-center justify-between h-15 px-4 md:px-8 bg-white border-b border-base-300 fixed top-0 left-0 right-0 z-50">
+      <nav className="flex items-center justify-between h-15 px-4 md:px-8 bg-white border-b border-base-300 fixed top-0 left-0 right-0 z-40">
         <Link href={"/"} className="text-[#1f2937] font-bold text-2xl">
           Keen<span className="text-[#244d3f]">Keeper</span>
         </Link>
@@ -39,7 +39,7 @@ const Navbar = () => {
       </nav>
 
       <section
-        className={`fixed inset-0 backdrop-blur-[2px] z-40 transition-opacity duration-300 
+        className={`fixed inset-0 backdrop-blur-[2px] z-50 transition-opacity duration-300 
   ${showMenu ? "opacity-100 visible" : "opacity-0 invisible"}`}
       >
         <div
