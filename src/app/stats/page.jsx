@@ -1,6 +1,10 @@
 import React from "react";
 import StatsChart from "../../components/charts/StatsChart";
-
+export const metadata = {
+  title: "Friendship Analytics | KeenKeeper",
+  description:
+    "Visualize your relationship patterns with detailed analytics. Track calls, texts, and video interactions to stay meaningfully connected.",
+};
 const StatsPage = () => {
   return (
     <section className="my-10 max-w-278 mx-auto px-4 ">

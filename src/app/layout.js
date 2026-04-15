@@ -18,6 +18,9 @@ export const metadata = {
   title: "KeenKeeper",
   description:
     "Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.",
+    icons: {
+    icon: '/favicon.svg', 
+  },
 };
 
 export default function RootLayout({ children }) {
