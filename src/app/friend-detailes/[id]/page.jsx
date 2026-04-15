@@ -9,7 +9,26 @@ import {
   Trash,
   Video,
 } from "lucide-react";
+// Dynamic meta data
+export async function generateMetadata({ params }) {
+  const friends = await (
+    await fetch(process.env.NEXT_PUBLIC_BASE_URL + "/friendData.json")
+  ).json();
+  const { id } = await params;
+  const oneFriend = friends.find((i) => i.id == parseInt(id));
 
+  if (!oneFriend) {
+    return {
+      title: "Friend Not Found | KeenKeeper",
+      description: "No friend found in your list.",
+    };
+  }
+
+  return {
+    title: `${oneFriend.name} | KeenKeeper`,
+    description: `Last contacted ${oneFriend.days_since_contact} days ago. Next goal: ${oneFriend.goal} days.`,
+  };
+}
 const FriendDetailes = async ({ params }) => {
   const friends = await (
     await fetch(process.env.NEXT_PUBLIC_BASE_URL + "/friendData.json")
