@@ -7,7 +7,7 @@ const TimelineContext = ({ children }) => {
   const [allTimeline, setAllTimeline] = useState([]);
   const [filterType, setFilterType] = useState("");
   const [sortType, setSortType] = useState("");
-  const [query,setQuery]=useState("");
+  const [query, setQuery] = useState("");
   const addToTimeline = (media, name) => {
     const newEntry = {
       id: crypto.randomUUID(),
@@ -44,12 +44,20 @@ const TimelineContext = ({ children }) => {
         return sortType === "newest" ? dateB - dateA : dateA - dateB;
       })
     : filteredTimeline;
+
+  
+    const qureryTimeline = allTimeline.filter((i) => i.name.toLowerCase().includes(query.toLowerCase()));
+    
+    
+  
+
   const value = {
     addToTimeline,
-    timeline: sortedTimeline,
+    timeline: qureryTimeline,
     setFilterType,
     setSortType,
-    setQuery
+    setQuery,
+    
   };
   return (
     <TimelineContextApi.Provider value={value}>
