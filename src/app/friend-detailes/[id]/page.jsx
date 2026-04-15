@@ -2,11 +2,13 @@ import FriendDetailesAction from "./../../../components/ui/FriendDetailesAction"
 import React from "react";
 import FriendCard from "../../../components/ui/friendDetailes/FriendCard";
 import { Archive, Trash, Bell } from "lucide-react";
+import { readFileSync } from "fs";
+import { join } from "path";
+
 // Dynamic meta data
 export async function generateMetadata({ params }) {
-  const friends = await (
-    await fetch(process.env.NEXT_PUBLIC_BASE_URL + "/friendData.json")
-  ).json();
+  const filePath = join(process.cwd(), "public/friendData.json");
+  const friends = JSON.parse(readFileSync(filePath, "utf-8"));
   const { id } = await params;
   const oneFriend = friends.find((i) => i.id == parseInt(id));
 
@@ -23,9 +25,8 @@ export async function generateMetadata({ params }) {
   };
 }
 const FriendDetailes = async ({ params }) => {
-  const friends = await (
-    await fetch(process.env.NEXT_PUBLIC_BASE_URL + "/friendData.json")
-  ).json();
+  const filePath = join(process.cwd(), "public/friendData.json");
+  const friends = JSON.parse(readFileSync(filePath, "utf-8"));
   const { id } = await params;
 
   const oneFriend = friends.find((i) => i.id == parseInt(id));
