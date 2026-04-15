@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="flex items-center justify-between h-15 px-8 bg-white border-b border-base-300 fixed top-0 left-0 right-0">
+      <nav className="flex items-center justify-between h-15 px-4 md:px-8 bg-white border-b border-base-300 fixed top-0 left-0 right-0">
         <h1 className="text-[#1f2937] font-bold text-2xl">
           Keen<span className="text-[#244d3f]">Keeper</span>
         </h1>
