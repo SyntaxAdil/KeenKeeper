@@ -11,7 +11,7 @@ const FriendsCard = ({ friend }) => {
   return (
     <Link
       href={`/friend-detailes/${friend.id}`}
-      className="p-8 rounded-md shadow flex items-center  flex-col transition-all duration-150 hover:scale-105 hover:border-[#cbfadb] border border-white text-center"
+      className="p-8 rounded-md shadow flex items-center  flex-col transition-all duration-150 hover:scale-105 hover:border-[#cbfadb] border border-white text-center bg-white "
     >
       <Image
         src={friend.picture}

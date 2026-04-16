@@ -1,5 +1,5 @@
-"use client";
-import { createContext, useEffect, useState } from "react";
+"use client"
+import { createContext, useRef, useState } from "react";
 import toast from "react-hot-toast";
 
 export const TimelineContextApi = createContext(null);
@@ -9,41 +9,58 @@ const TimelineContext = ({ children }) => {
   const [filterType, setFilterType] = useState("");
   const [sortType, setSortType] = useState("");
   const [query, setQuery] = useState("");
+  const addingRef = useRef(false);
+
   const messages = {
     call: "Call logged successfully",
     message: "Message sent successfully",
     video: "Video session added",
   };
+
   const addToTimeline = (media, name) => {
-    const newEntry = {
-      id: crypto.randomUUID(),
-      name: name,
-      icon:
-        media === "call"
-          ? "/assets/call.png"
-          : media === "message"
-            ? "/assets/text.png"
-            : "/assets/video.png",
-      media: media === "call" ? "Call" : media === "message" ? "Text" : "Video",
-      date: new Date().toLocaleDateString("en-US", {
-        month: "short",
-        day: "2-digit",
-        year: "numeric",
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: true,
-      }),
-    };
-    setAllTimeline((p) => [...p, newEntry]);
-    toast.success(`${messages[media]} ${media==="message"?"to":"with"} ${name}`);
+    if (addingRef.current) return;
+
+    addingRef.current = true;
+
+    setAllTimeline((prev) => {
+      const newEntry = {
+        id: crypto.randomUUID(),
+        name,
+        icon:
+          media === "call"
+            ? "/assets/call.png"
+            : media === "message"
+              ? "/assets/text.png"
+              : "/assets/video.png",
+        media:
+          media === "call" ? "Call" : media === "message" ? "Text" : "Video",
+        date: new Date().toLocaleDateString("en-US", {
+          month: "short",
+          day: "2-digit",
+          year: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: true,
+        }),
+      };
+      return [...prev, newEntry];
+    });
+
+    toast.success(
+      `${messages[media]} ${media === "message" ? "to" : "with"} ${name}`
+    );
+
+    setTimeout(() => {
+      addingRef.current = false;
+    }, 500);
   };
 
-  // filteredLogic
   const filteredTimeline = filterType
     ? allTimeline.filter((i) =>
-        filterType === "All" ? true : i.media === filterType,
+        filterType === "All" ? true : i.media === filterType
       )
     : allTimeline;
+
   const sortedTimeline = sortType
     ? [...filteredTimeline].sort((a, b) => {
         const dateA = new Date(a.date);
@@ -52,18 +69,19 @@ const TimelineContext = ({ children }) => {
       })
     : filteredTimeline;
 
-  const qureryTimeline = sortedTimeline.filter((i) =>
-    i.name.toLowerCase().includes(query.toLowerCase()),
+  const queryTimeline = sortedTimeline.filter((i) =>
+    i.name.toLowerCase().includes(query.toLowerCase())
   );
 
   const value = {
     addToTimeline,
-    timeline: qureryTimeline,
+    timeline: queryTimeline,
     setFilterType,
     setSortType,
     setQuery,
-    setAllTimeline
+    setAllTimeline,
   };
+
   return (
     <TimelineContextApi.Provider value={value}>
       {children}
