@@ -3,17 +3,26 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="pt-15 pb-8 md:py-10 md:text-center px-4">
-      <h1 className= "text-4xl  md:text-5xl font-bold mb-4" >Friends to keep close in your life</h1>
+    <section className="pt-16 pb-10 md:py-24 md:text-center px-4">
+      
+      <h1 className="text-[36px] md:text-5xl font-bold mb-4 animate-fade-up">
+        Friends to keep close in your life
+      </h1>
 
-      <p className="text-[#64748b] mb-8 " >
-        Your personal shelf of meaningful connections. Browse, tend, and nurture <br />
+      <p className="text-slate-500 mb-8 max-w-xl mx-auto animate-fade-up animate-delay-100">
+        Your personal shelf of meaningful connections. Browse, tend, and nurture
         the relationships that matter most.
       </p>
-      
-      <button className="btn bg-[#244d3f] text-white px-4 text-base transition-all duration-150 hover:-translate-y-1.5 hover:shadow-[#244d3f] shadow border-0 ">
-        <Plus size={16} /> Add a friend
+
+      <button
+        className="inline-flex items-center gap-2 bg-[#244d3f] text-white px-5 py-2.5 rounded-lg
+        shadow transition-all duration-200
+        hover:-translate-y-1 hover:shadow-lg animate-fade-up animate-delay-200"
+      >
+        <Plus size={16} />
+        Add a friend
       </button>
+
     </section>
   );
 };
